@@ -1,16 +1,3 @@
-# def __init__(self, n, g):
-#     self.n = n
-#     self.time = 1
-#     self.g = g
-#     self.g_directed = ""
-#     self.visited = [False] * n
-#     self.parent = [None] * n
-#     self.frontier = [0]
-#     self.vertex_disc = [0] * n
-#     self.disc_vertex = [0] * n
-#     self.low = [0] * n
-#     self.cuts = [[] for x in range(4)]
-
 def run(g, n):
     parent = [None] * n
     frontier = [0]
@@ -66,21 +53,3 @@ def update_low(v, z, low, parent):
         low[curr] = min(low[curr], low[v])
         curr = parent[curr]
     return low
-
-
-
-def find_cuts(self, u):
-    self.visited[u] = True
-    self.disc[u] = self.time
-    self.low[u] = self.time
-    self.time += 1
-    for v in self.g[u]:
-        if not self.visited[v]:
-            self.parent[v] = u
-            self.find_cuts(v)
-            self.low[u] = min(self.low[u], self.low[v])
-            if self.low[v] > self.disc[u]:
-                g_directed = g_directed + str(u+1) + " " + str(v+1) + "\n"
-        elif v != self.parent[u]:
-            self.low[u] = min(self.low[u], self.disc[v])
-    return

@@ -1,7 +1,6 @@
 from dfs import run
-from igraph import Graph
 
-file = open("./hw5_testset/test_11.in", "r")
+file = open("./hw5_testset/test_12.in", "r")
 data = file.read().splitlines()
 for i in range(len(data)):
     line = data[i].split(" ")
@@ -27,4 +26,7 @@ for node_list in g:
 
 
 out = run(g, n)
+text_file = open("test_ out", "w")
+n = text_file.write(out)
+text_file.close()
 print(out)
